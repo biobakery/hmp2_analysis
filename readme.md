@@ -3,11 +3,11 @@ The HMP2 analysis repository contains code to generate figures for the IBDMDB pa
 The directory structure is as follows:
 
 * `common/` scripts for common operations including:
-  * Loading of all measurement types
-  * Loading and merging metadata in PCL tables
-  * Lenient matching of datasets
-  * Common plot format settings (colors, themes, etc..)
-  * Dysbiosis score (called "activity" in the code)
+	* Loading of all measurement types
+	* Loading and merging metadata in PCL tables
+	* Lenient matching of datasets
+	* Common plot format settings (colors, themes, etc..)
+	* Dysbiosis score (called "activity" in the code)
 * `differential_abundance/` differential abundance testing
 * `disease_activity/` dysbiosis timing and plots
 * `mechanistic_correlations/` Cross-measurement-type correlations
@@ -17,6 +17,7 @@ The directory structure is as follows:
 
 # Figure Guide
 The source for most figures can be found in the following scripts. These scripts are generally written to output figures and results into their parent folder, e.g. `overview/src/taxonomy_overview.r` outputs to `overview/`.
+
 * 1C: `overview/src/overview_venn.r`
 * 1D: `overview/src/taxonomy_overview.r`
 * 1E: `overview/src/mantel_tests.r`
@@ -57,38 +58,39 @@ Fig. 4C and ED Figs. 7, 8, and 9 were generated using Cytoscape. Instructions ca
 
 ## Setup
 A script called `env_config.r` is expected in the root folder, containing paths to data folders. You can copy and fill in the template `env_config.r.template`. The path pointed to by `HMP2_Dropbox` is expected to have the following structure:
+
 * `data/`
-  * `16s/`
-    * `biopsy_16s_otus_Rfriendly.pcl.tsv` biopsy 16S data
-  * `htx/`
-    * `host_tx_counts.pcl.tsv` host transcriptomes
-  * `mbx/`
-    * `iHMP_metabolomics.pcl.csv.gz` metabolomics profiles
-  * `metadata/` full sample metadata tables
-  * `mgx/`
-    * `ecs_relab.pcl.tsv.gz` MGX EC abundances with stratification
-    * `ecs_relab.slim.pcl.tsv.gz` MGX EC abundances without stratification
-    * `kos_relab.pcl.tsv.gz` MGX KO abundances with stratification
-	* `kos_relab.slim.pcl.tsv.gz` MGX KO abundances with stratification
-	* `kos_relab_bugsummary.pcl.tsv` Species-level MGX KO rollups
-	* `pathabundance_relab.pcl.tsv.gz` MGX pathway abundances with stratification
-	* `taxonomic_profiles.pcl.tsv` MetaPhlAn2 taxonomic profiles
-  * `mpx/`
-    * `hmp2_MPX_not_normalized_ecs.names.pcl.tsv` EC rollup of protein counts
-	* `hmp2_MPX_not_normalized_kos.names.pcl.tsv` KO rollup of protein counts
-	* `iHMP_all_proteomics_?pep-pro_1p_FDR_?ppm.pcl.tsv.gz` Raw protein count tables
-  * `mtx/`
-    * `ecs_relab.pcl.tsv.gz` MTX EC abundances with stratification
-    * `ecs_relab.slim.pcl.tsv.gz` MTX EC abundances without stratification
-	* `kos_relab.pcl.tsv.gz` MTX KO abundances with stratification
-	* `kos_relab.slim.pcl.tsv.gz` MTX KO abundances without stratification
-	* `kos_relab_bugsummary.pcl.tsv` Species-level MTX KO rollups
-	* `pathabundance_relab.pcl.tsv.gz` MTX pathway abundances with stratification
-  * `mvx/`
-    * `HMP2.Virome.VirMAP.pcl.tsv` VirMAP viral profiles
-    * `metaphlan2_taxonomic_profiles.pcl.tsv` MetaPhlAn2 viral profiles
-  * `serology/`
-    * `hmp2_serology_Compiled_ELISA_Data.pcl.tsv` Serological profiles
+	* `16s/`
+		* `biopsy_16s_otus_Rfriendly.pcl.tsv` biopsy 16S data
+	* `htx/`
+		* `host_tx_counts.pcl.tsv` host transcriptomes
+	* `mbx/`
+		* `iHMP_metabolomics.pcl.csv.gz` metabolomics profiles
+	* `metadata/` full sample metadata tables
+	* `mgx/`
+		* `ecs_relab.pcl.tsv.gz` MGX EC abundances with stratification
+		* `ecs_relab.slim.pcl.tsv.gz` MGX EC abundances without stratification
+		* `kos_relab.pcl.tsv.gz` MGX KO abundances with stratification
+		* `kos_relab.slim.pcl.tsv.gz` MGX KO abundances with stratification
+		* `kos_relab_bugsummary.pcl.tsv` Species-level MGX KO rollups
+		* `pathabundance_relab.pcl.tsv.gz` MGX pathway abundances with stratification
+		* `taxonomic_profiles.pcl.tsv` MetaPhlAn2 taxonomic profiles
+	* `mpx/`
+		* `hmp2_MPX_not_normalized_ecs.names.pcl.tsv` EC rollup of protein counts
+		* `hmp2_MPX_not_normalized_kos.names.pcl.tsv` KO rollup of protein counts
+		* `iHMP_all_proteomics_?pep-pro_1p_FDR_?ppm.pcl.tsv.gz` Raw protein count tables
+	* `mtx/`
+		* `ecs_relab.pcl.tsv.gz` MTX EC abundances with stratification
+		* `ecs_relab.slim.pcl.tsv.gz` MTX EC abundances without stratification
+		* `kos_relab.pcl.tsv.gz` MTX KO abundances with stratification
+		* `kos_relab.slim.pcl.tsv.gz` MTX KO abundances without stratification
+		* `kos_relab_bugsummary.pcl.tsv` Species-level MTX KO rollups
+		* `pathabundance_relab.pcl.tsv.gz` MTX pathway abundances with stratification
+	* `mvx/`
+		* `HMP2.Virome.VirMAP.pcl.tsv` VirMAP viral profiles
+		* `metaphlan2_taxonomic_profiles.pcl.tsv` MetaPhlAn2 viral profiles
+	* `serology/`
+		* `hmp2_serology_Compiled_ELISA_Data.pcl.tsv` Serological profiles
 
 All data tables are in PCL format with metadata attached at the top.
 Additionally, `common/install_dependencies.r` can be run to install dependencies for most scripts in this repository.
