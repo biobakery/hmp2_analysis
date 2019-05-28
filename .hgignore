@@ -1,0 +1,15 @@
+syntax: glob
+.RData
+.Rproj.user/*
+*.mat
+*.fig
+*.pdf
+.Rhistory
+*.asv
+*.xlsx
+results/*
+*uger_output*
+*.tsv
+data/*
+.DS_Store
+env_config.r
